@@ -1,0 +1,6 @@
+process.env.DATABASE_URL = your connectionString
+EMAIL_USERNAME=your google account email
+EMAIL_PASSWORDS=your google account password
+BASE_URL=Base URL of your website
+FACEBOOK_APP_ID=provided by facebook for developers
+FACEBOOK_APP_SECRET=provided by facebook for developers

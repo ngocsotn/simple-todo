@@ -1,0 +1,55 @@
+<%- include('header',{title: 'Xác thực tài khoản'}); -%>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="img-01.png" alt="IMG">
+      </div>
+      <form method="POST" action="/verify" class="login100-form validate-form">
+        <span class="login100-form-title" style="font-size: 30px; font-weight:700;">
+          Nhập mã xác thực
+        </span>
+        <div class="wrap-input100">
+          <input class="input100" type="text" id="verifyCode" name="verifyCode" placeholder="Input your Verify Code..." required>	
+          <span class="focus-input100"></span>					
+        </div>        
+        <div class="container-login100-form-btn">
+          <button type="submit" class="login100-form-btn">
+            Verify
+          </button>
+        </div>
+        <div class="text-center p-t-12">
+            <p>
+                <!-- <strong>
+                  Không nhận được mã sau 5 phút?
+                  <br>
+                  <a style="color: #1B00B5" href="/resend">Gửi lại ngay tại đây</a>					
+                </strong> -->
+            </p>
+        </div>
+        <div class="text-center p-t-12">
+          <span class="txt1">         
+          </span>
+          <a class="txt2" href="#">           
+          </a>
+        </div>
+        <div class="text-center p-t-136">
+          <p>
+            <strong>
+              Vui lòng kiểm tra mã đã được gửi
+              <br>
+              vào Email của bạn.					
+            </strong>
+          </p>
+          <p>
+            <strong>
+             Không nhận được mã?
+              <a style="color: #1B00B5;"  href="/resend">Bấm vào đây</a>
+            </strong>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('footer'); -%>

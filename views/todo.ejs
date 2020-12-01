@@ -1,0 +1,52 @@
+<%- include('header',{title: 'To do'}); -%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100" style="padding-top: 8%; padding-bottom: 8%;">
+      <form method="POST" action="/todo" class="login100-form validate-form" style="width: 100%; padding-left: 5%;">
+        <span class="login100-form-title" style="padding-bottom: 30px; font-size: 40px; font-weight: 700;">
+          TO DO
+        </span>
+        <div class="wrap-input100" style="text-align: center; width: 75%; float: left; padding-bottom: 0px;">
+          <input style="font-weight: 500;" class="input100" type="text" id="todoContent" name="todoContent" placeholder="Thêm một công việc..." required>	
+          <span class="focus-input100"></span>					
+        </div>
+        <div class="container-login100-form-btn" style="width: 20%; float: right; padding-top: 0px;">
+          <button type="submit" class="login100-form-btn">
+            Thêm
+          </button>
+        </div>    
+      </form>
+      <% for(var i = 0; i < todoList.length ; i++) { %>
+        <div class = "TaskUnCheckedWrapper" id ="wrap-<%= todoList[i].id; %>">
+            <div class = "TaskUnCheckedContent" id ="text-<%= todoList[i].id; %>">
+              <%= todoList[i].name; %>
+            </div>
+            <div class="form-check" id="TaskUncheckedBox" >
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" value ="check-<%= todoList[i].id; %>" onclick="getbuttonvalue(this)">
+                <label class="form-check-label" for="exampleCheck1"></label>
+            </div>		
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+<script>
+  function getbuttonvalue(obj){
+    inputValue = String(obj.value);
+    position = inputValue.indexOf('-');
+    idNumber = inputValue.substring(position+1);
+    //alert(idNumber);
+    var command_jQuery="#wrap-"+idNumber;
+    //var command_jQuery = '#messaging[value="msg'+ messageID +'"]';
+    $("#wrap-"+idNumber).fadeOut(700,'swing'); 
+    //xóa trong session
+    $.ajax
+    ({
+        type:"POST",
+        url:"/checktodo",  
+        data:{idNumber:idNumber},
+    });
+  }
+</script>
+<%- include('footer'); -%>

@@ -1,0 +1,53 @@
+<%- include('header',{title: 'Trang đăng ký'}); -%>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="img-01.png" alt="IMG">
+      </div>
+      <form method="POST" action="/register" class="login100-form validate-form">
+        <span class="login100-form-title" style="font-size: 40px; font-weight:700;">
+          Đăng ký
+        </span>
+        <div class="wrap-input100">
+          <input class="input100" type="text" id="displayName" name="displayName" placeholder="Input your Name here" required>	
+          <span class="focus-input100"></span>					
+        </div>
+        <div class="wrap-input100">
+            <input class="input100" type="email" id="email" name="email" placeholder="Input your email here" required>	
+            <span class="focus-input100"></span>					
+          </div>
+        <div class="wrap-input100">
+          <input class="input100" type="password" id="passwords" name="passwords" placeholder="Type a Password" required>
+          <span class="focus-input100"></span>
+        </div>
+        
+        <div class="container-login100-form-btn">
+          <button type="submit" class="login100-form-btn">
+            Register
+          </button>
+        </div>
+        <div class="text-center p-t-12">
+            <span class="txt1">
+              
+            </span>
+            <a class="txt2" href="#">           
+            </a>
+          </div>
+          <div class="text-center p-t-136">
+            <p><strong>
+              Sau khi đăng ký thành công
+              <br>
+              hãy vào Email của bạn để lấy mã xác nhận.						
+            </strong>
+            </p>
+            <p class="tx2">			
+            </p>
+            <p class="tx2">
+            </p>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('footer'); -%>

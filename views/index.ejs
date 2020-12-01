@@ -1,0 +1,5 @@
+<%- include('header',{title: 'trang chủ'}); -%>
+<div class="container">
+  <h3>Xin chào, <%= currentUser ? currentUser.displayName : 'Khách' %></h3>
+</div>
+<%- include('footer'); -%>
