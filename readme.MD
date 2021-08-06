@@ -9,6 +9,3 @@
 - A simple todo app, you can register then login (You also can login via Facebook) to use it, or just use the default account bellow the Login form.
 - You can add or tick done the task you want.
 - The news about covid-19 is using RSS (VnExpress, Tuoitre, thanhnien) to get new data everyday, click the news title you want to read, it will take you to the main page.
-
-## Try it now
-[My Heroku App](https://thengoc-1760120-btcn07.herokuapp.com/)
